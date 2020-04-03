@@ -8,7 +8,7 @@ lock: true
 
 # Optionally, specify configuration settings just for `issues` or `pulls`
 issues:
-  comment: >
+  comment: |
     Thank you for your interest in the libvirt project.
 
     This repository is a read-only mirror of the project's master
@@ -22,7 +22,7 @@ issues:
     Thank you for your time and understanding.
 
 pulls:
-  comment: >
+  comment: |
     Thank you for your interest in the libvirt project.
 
     This repository is a read-only mirror of the project's master
