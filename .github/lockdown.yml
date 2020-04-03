@@ -1,0 +1,36 @@
+# Configuration for Repo Lockdown - https://github.com/dessant/repo-lockdown
+
+# Close issues and pull requests
+close: true
+
+# Lock issues and pull requests
+lock: true
+
+# Optionally, specify configuration settings just for `issues` or `pulls`
+issues:
+  comment: |
+    Thank you for your interest in the libvirt project.
+
+    This repository is a read-only mirror of the project's master repostories hosted on GitLab. Thus the project does not process issues filed on this site.
+
+    We kindly request that new issues are reported to
+
+      https://gitlab.com/libvirt/test/-/issues/new
+
+    Thank you for your time and understanding.
+
+pulls:
+  comment: |
+    Thank you for your interest in the libvirt project.
+
+    This repository is a read-only mirror of the project's master repostories hosted on GitLab. Thus the project does not process merge requests filed on this site.
+
+    We kindly request that you fork the project at
+
+      https://gitlab.com/libvirt/test/
+
+    push your changes to the fork, and then open a new merge request at
+
+      https://gitlab.com/libvirt/test/-/merge_requests/new
+
+    Thank you for your time and understanding.
