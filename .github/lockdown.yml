@@ -11,7 +11,7 @@ issues:
   comment: |
     Thank you for your interest in the libvirt project.
 
-    This repository is a read-only mirror of the project's master repostories hosted on GitLab. Thus the project does not process issues filed on this site.
+    Since this repository is a read-only mirror of the project's master repostory hosted on GitLab, issues opened here are not processed.
 
     We kindly request that new issues are reported to
 
@@ -23,13 +23,13 @@ pulls:
   comment: |
     Thank you for your interest in the libvirt project.
 
-    This repository is a read-only mirror of the project's master repostories hosted on GitLab. Thus the project does not process merge requests filed on this site.
+    Since this repository is a read-only mirror of the project's master repostory hosted on GitLab, merge requests opened here are not processed.
 
-    We kindly request that you fork the project at
+    We kindly request that contributors fork the project at
 
       https://gitlab.com/libvirt/test/
 
-    push your changes to the fork, and then open a new merge request at
+    push changes to the fork, and then open a new merge request at
 
       https://gitlab.com/libvirt/test/-/merge_requests/new
 
