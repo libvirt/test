@@ -1,45 +1,7 @@
-stages:
-  - prebuild
-  - containers
-  - build
 
-.container_job_template: &container_job_definition
-  image: docker:stable
-  stage: containers
-  services:
-    - docker:dind
-  before_script:
-    - export TAG="${CI_REGISTRY_IMAGE}/buildenv-${NAME}:latest"
-    - export COMMON_TAG="${CI_REGISTRY}/libvirt/test/buildenv-${NAME}:latest"
-    - docker info
-    - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+env:
+  image: alpine:edge
   script:
-    - docker pull ${TAG} || docker pull ${COMMON_TAG} || true
-    - docker build --cache-from ${TAG} --cache-from ${COMMON_TAG} --tag ${TAG} -f ci/libvirt-${NAME}.dkr ci
-    - docker push ${TAG}
-  after_script:
-    - docker logout
-
-# Check that all commits are signed-off for the DCO.
-# Skip on "libvirt" namespace, since we only need to run
-# this test on developer's personal forks from which
-# merge requests are submitted
-check-dco:
-  stage: prebuild
-  image: registry.gitlab.com/libvirt/libvirt-ci/check-dco:master
-  script:
-    - /check-dco
-  except:
-    variables:
-     - $CI_PROJECT_NAMESPACE == 'libvirt'
-
-ctr-centos-8:
-  <<: *container_job_definition
-  variables:
-    NAME: centos-8
-
-demo:
-  stage: build
-  image: ${CI_REGISTRY_IMAGE}/buildenv-centos-8:latest
-  script:
-    - echo Hello World
+    - printenv | sort
+  rules:
+    - when: always
