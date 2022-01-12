@@ -1,5 +1,5 @@
 
-env:
+showenv:
   image: alpine:edge
   script:
     - printenv | sort
