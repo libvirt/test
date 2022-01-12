@@ -1,5 +1,0 @@
-FROM centos:8
-
-RUN dnf install -y libxml2-devel && \
-    dnf autoremove -y && \
-    dnf clean all -y
