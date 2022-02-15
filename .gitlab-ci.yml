@@ -2,6 +2,9 @@
 showenv:
   image: alpine:edge
   script:
+    - echo 'Running from merge request in upstream project only'
     - printenv | sort
   rules:
-    - when: always
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_PROJECT_PATH == $CI_MERGE_REQUEST_PROJECT_PATH'
+      when: always
+    - when: never
